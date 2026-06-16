@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './StepList.module.css';
 
 interface StepListProps {
-  steps: string[];
+  steps: React.ReactNode[];
 }
 
 export const StepList: React.FC<StepListProps> = ({ steps }) => {

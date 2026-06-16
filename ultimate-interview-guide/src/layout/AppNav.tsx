@@ -22,7 +22,7 @@ const TABS: TabItem[] = [
   { id: 'react-native', label: 'React Native', isComingSoon: true },
   { id: 'coding-challenges', label: 'Coding Challenges' },
   { id: 'backend', label: 'Backend', isComingSoon: true },
-  { id: 'system-design', label: 'System Design', isComingSoon: true },
+  { id: 'system-design', label: 'System Design' },
   { id: 'behavioral', label: 'Behavioral', isComingSoon: true },
   { id: 'ai', label: 'AI', isComingSoon: true },
   { id: 'my-stories', label: 'My Stories', isComingSoon: true },

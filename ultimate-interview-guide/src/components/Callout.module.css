@@ -1,0 +1,97 @@
+.callout {
+  position: relative;
+  background: linear-gradient(rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.02)), var(--surface-raised);
+  border-left: 3px solid var(--border);
+  padding: 14px 18px;
+  border-radius: 0 8px 8px 0;
+  margin: 18px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.content {
+  color: var(--text-primary);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Inherit link colors, formatting lists inside callouts */
+.content p {
+  margin: 0;
+}
+
+.content ul {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.content li {
+  position: relative;
+  padding-left: 16px;
+  color: var(--text-secondary);
+}
+
+.content li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 8px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+}
+
+/* Callout Variant Styles */
+.senior-signal {
+  border-left-color: var(--accent);
+}
+.senior-signal .label {
+  color: var(--accent);
+}
+.senior-signal li::before {
+  background-color: var(--accent);
+}
+
+.trap {
+  border-left-color: var(--red);
+}
+.trap .label {
+  color: var(--red);
+}
+.trap li::before {
+  background-color: var(--red);
+}
+
+.key-insight {
+  border-left-color: var(--blue);
+}
+.key-insight .label {
+  color: var(--blue);
+}
+.key-insight li::before {
+  background-color: var(--blue);
+}
+
+.analogy {
+  border-left-color: var(--amber);
+}
+.analogy .label {
+  color: var(--amber);
+}
+.analogy li::before {
+  background-color: var(--amber);
+}

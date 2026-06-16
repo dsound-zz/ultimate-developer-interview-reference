@@ -3,6 +3,7 @@ import { AppNav } from './layout/AppNav';
 import type { TabId } from './layout/AppNav';
 import { FrontendTab } from './tabs/FrontendTab';
 import { ChallengesTab } from './tabs/ChallengesTab';
+import { SystemDesignTab } from './tabs/SystemDesignTab';
 import { PlaceholderTab } from './tabs/PlaceholderTab';
 
 const TAB_LABELS: Record<TabId, string> = {
@@ -25,6 +26,9 @@ function App() {
     }
     if (activeTab === 'coding-challenges') {
       return <ChallengesTab />;
+    }
+    if (activeTab === 'system-design') {
+      return <SystemDesignTab />;
     }
     return <PlaceholderTab title={TAB_LABELS[activeTab]} />;
   };
