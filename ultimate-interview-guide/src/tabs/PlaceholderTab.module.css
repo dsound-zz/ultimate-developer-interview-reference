@@ -33,7 +33,7 @@
 }
 
 .comingSoon {
-  font-size: 28px;
+  font-size: 29.4px;
   font-weight: 600;
   color: var(--text-primary);
   letter-spacing: -0.02em;
@@ -41,7 +41,7 @@
 }
 
 .description {
-  font-size: 13.5px;
+  font-size: 14.18px;
   color: var(--text-secondary);
   line-height: 1.7;
 }

@@ -3,7 +3,7 @@
   top: 0;
   z-index: 1000;
   width: 100%;
-  background-color: rgba(13, 13, 15, 0.8);
+  background-color: var(--nav-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
@@ -22,7 +22,7 @@
 
 .logo {
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 16.8px;
   font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--text-primary);
@@ -58,7 +58,7 @@
   border: 1px solid transparent;
   color: var(--text-secondary);
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 13.65px;
   font-weight: 500;
   padding: 6px 14px;
   border-radius: 6px;
@@ -72,7 +72,7 @@
 
 .tabButton:hover {
   color: var(--text-primary);
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: var(--surface-raised);
 }
 
 .activeTab {
@@ -94,7 +94,7 @@
 }
 
 .comingSoonBadge {
-  font-size: 9px;
+  font-size: 9.45px;
   font-weight: 600;
   background-color: var(--border-subtle);
   color: var(--text-muted);
@@ -124,4 +124,64 @@
     justify-content: center;
     padding: 0 12px;
   }
+}
+
+.pulseDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+  animation: pulseFade 2s infinite ease-in-out;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+@keyframes pulseFade {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+.themeToggle:hover {
+  color: var(--text-primary);
+  background-color: var(--surface-raised);
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(123, 97, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.themeToggle:active {
+  transform: translateY(1px);
+}
+
+.themeIcon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.themeToggle:hover .themeIcon {
+  transform: rotate(20deg);
 }

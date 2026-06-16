@@ -23,17 +23,19 @@ const TABS: TabItem[] = [
   { id: 'coding-challenges', label: 'Coding Challenges' },
   { id: 'backend', label: 'Backend', isComingSoon: true },
   { id: 'system-design', label: 'System Design' },
-  { id: 'behavioral', label: 'Behavioral', isComingSoon: true },
-  { id: 'ai', label: 'AI', isComingSoon: true },
+  { id: 'behavioral', label: 'Behavioral' },
+  { id: 'ai', label: 'AI & Agents' },
   { id: 'my-stories', label: 'My Stories', isComingSoon: true },
 ];
 
 interface AppNavProps {
   activeTab: TabId;
   onTabChange: (id: TabId) => void;
+  theme: 'dark' | 'light';
+  onThemeToggle: () => void;
 }
 
-export const AppNav: React.FC<AppNavProps> = ({ activeTab, onTabChange }) => {
+export const AppNav: React.FC<AppNavProps> = ({ activeTab, onTabChange, theme, onThemeToggle }) => {
   return (
     <header className={styles.navbar}>
       <div className={styles.navContainer}>
@@ -50,6 +52,9 @@ export const AppNav: React.FC<AppNavProps> = ({ activeTab, onTabChange }) => {
                   onClick={() => onTabChange(tab.id)}
                   className={`${styles.tabButton} ${isActive ? styles.activeTab : ''}`}
                 >
+                  {tab.id === 'ai' && (
+                    <span className={styles.pulseDot} />
+                  )}
                   {tab.label}
                   {tab.isComingSoon && (
                     <span className={styles.comingSoonBadge}>Soon</span>
@@ -62,6 +67,22 @@ export const AppNav: React.FC<AppNavProps> = ({ activeTab, onTabChange }) => {
             })}
           </div>
         </nav>
+        <button
+          onClick={onThemeToggle}
+          className={styles.themeToggle}
+          aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+        >
+          {theme === 'dark' ? (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.themeIcon}>
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+            </svg>
+          ) : (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.themeIcon}>
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+            </svg>
+          )}
+        </button>
       </div>
     </header>
   );

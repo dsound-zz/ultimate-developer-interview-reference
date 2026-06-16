@@ -13,7 +13,7 @@
 .label {
   color: var(--blue);
   font-family: var(--font-body);
-  font-size: 10px;
+  font-size: 10.5px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -22,7 +22,7 @@
 
 .content {
   color: var(--text-primary);
-  font-size: 13px;
+  font-size: 13.65px;
   line-height: 1.6;
 }
 

@@ -1,0 +1,33 @@
+.tabLayout {
+  display: flex;
+  gap: 48px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.contentArea {
+  flex: 1;
+  min-width: 0; /* Prevents layout blowout */
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1024px) {
+  .tabLayout {
+    gap: 32px;
+    padding: 32px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabLayout {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 16px 40px 16px;
+  }
+  
+  .contentArea {
+    width: 100%;
+  }
+}

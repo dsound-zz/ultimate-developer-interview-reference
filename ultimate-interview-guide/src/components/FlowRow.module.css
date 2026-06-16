@@ -12,7 +12,7 @@
   color: var(--text-primary);
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 13px;
+  font-size: 13.65px;
   padding: 6px 14px;
   border-radius: 20px;
   text-align: center;
@@ -27,6 +27,6 @@
 .arrow {
   color: var(--accent);
   font-weight: 600;
-  font-size: 16px;
+  font-size: 16.8px;
   user-select: none;
 }

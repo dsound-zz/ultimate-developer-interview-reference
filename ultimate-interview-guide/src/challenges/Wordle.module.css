@@ -30,7 +30,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--font-body);
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--text-primary);
@@ -69,7 +69,7 @@
   border: 1px solid var(--border);
   color: var(--text-primary);
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 14.7px;
   padding: 10px;
   border-radius: 6px;
   outline: none;
@@ -87,7 +87,7 @@
   border: 1px solid var(--accent);
   color: #FFFFFF;
   font-family: var(--font-body);
-  font-size: 13.5px;
+  font-size: 14.18px;
   font-weight: 600;
   padding: 10px 16px;
   border-radius: 6px;
@@ -107,7 +107,7 @@
 .win {
   color: var(--green);
   font-weight: 600;
-  font-size: 14px;
+  font-size: 14.7px;
   text-align: center;
   margin: 0;
 }
@@ -115,7 +115,7 @@
 .loss {
   color: var(--red);
   font-weight: 600;
-  font-size: 14px;
+  font-size: 14.7px;
   text-align: center;
   margin: 0;
 }

@@ -1,0 +1,37 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 10.5px;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+.tml {
+  color: var(--badge-warn);
+  background-color: var(--badge-warn-bg);
+  border-color: rgba(251, 191, 36, 0.15);
+}
+
+.rethink {
+  color: var(--badge-info);
+  background-color: var(--badge-info-bg);
+  border-color: rgba(96, 165, 250, 0.15);
+}
+
+.olivine {
+  color: var(--badge-good);
+  background-color: var(--badge-good-bg);
+  border-color: rgba(52, 211, 153, 0.15);
+}
+
+.avandar {
+  color: var(--badge-avandar);
+  background-color: var(--badge-avandar-bg);
+  border-color: var(--badge-avandar-border);
+}

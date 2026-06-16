@@ -1,0 +1,102 @@
+.container {
+  margin-top: 16px;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 12px;
+}
+
+.trigger {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 11.55px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 4px 0;
+  transition: color 0.2s ease;
+}
+
+.trigger:hover {
+  color: var(--text-primary);
+}
+
+.arrow {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  color: var(--text-secondary);
+}
+
+.trigger:hover .arrow {
+  color: var(--text-primary);
+}
+
+.arrowOpen {
+  transform: rotate(180deg);
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.isOpen {
+  grid-template-rows: 1fr;
+}
+
+.content {
+  min-height: 0;
+}
+
+.list {
+  list-style: none;
+  padding: 12px 0 4px 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.listItem {
+  display: flex;
+  gap: 10px;
+  font-size: 13.65px;
+  line-height: 1.5;
+}
+
+.bullet {
+  color: var(--accent);
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.question {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.note {
+  color: var(--text-secondary);
+  font-size: 13.12px;
+}
+
+.coachingLabel {
+  color: var(--badge-info);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 9.45px;
+  letter-spacing: 0.05em;
+  margin-right: 4px;
+}

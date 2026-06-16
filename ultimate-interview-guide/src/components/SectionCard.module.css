@@ -13,7 +13,7 @@
 }
 
 .title {
-  font-size: 15px;
+  font-size: 15.75px;
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 12px;
@@ -22,7 +22,7 @@
 
 .content {
   color: var(--text-secondary);
-  font-size: 13.5px;
+  font-size: 14.18px;
   line-height: 1.7;
 }
 

@@ -8,6 +8,7 @@
   --text-primary: #F0EFF5;
   --text-secondary: #8A8A9A;
   --text-muted: #52525E;
+  --nav-bg: rgba(13, 13, 15, 0.85);
   
   --accent: #7B61FF;
   --accent-hover: #9B85FF;
@@ -29,9 +30,56 @@
   --badge-tip: #A78BFA;
   --badge-tip-bg: #1A0F2E;
 
+  /* Avandar Badge Variables */
+  --badge-avandar: #C084FC;
+  --badge-avandar-bg: #2E1065;
+  --badge-avandar-border: rgba(192, 132, 252, 0.15);
+
+  /* Code Block Colors */
+  --code-bg: #0A0A0C;
+  --code-bg-darker: #08080B;
+  --code-text: #E2E0F0;
+  --code-comment: #5A5A72;
+
   /* Font Families */
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Light Mode Overrides */
+:root[data-theme="light"] {
+  --background: #F8F9FA;
+  --surface: #FFFFFF;
+  --surface-raised: #F1F3F5;
+  --border: #DEE2E6;
+  --border-subtle: #E9ECEF;
+  --text-primary: #1A1A1E;
+  --text-secondary: #4A4A57;
+  --text-muted: #7E7E91;
+  --nav-bg: rgba(255, 255, 255, 0.85);
+
+  --accent: #5D3BF3;
+  --accent-hover: #482BD2;
+
+  --badge-good: #065F46;
+  --badge-good-bg: #D1FAE5;
+  --badge-warn: #92400E;
+  --badge-warn-bg: #FEF3C7;
+  --badge-trap: #991B1B;
+  --badge-trap-bg: #FEE2E2;
+  --badge-info: #1E40AF;
+  --badge-info-bg: #DBEAFE;
+  --badge-tip: #6B21A8;
+  --badge-tip-bg: #F3E8FF;
+
+  --badge-avandar: #5B21B6;
+  --badge-avandar-bg: #EDE9FE;
+  --badge-avandar-border: rgba(124, 58, 237, 0.15);
+
+  --code-bg: #F3F4F6;
+  --code-bg-darker: #E5E7EB;
+  --code-text: #1F2937;
+  --code-comment: #6B7280;
 }
 
 /* Reset and Base Styles */
@@ -45,11 +93,15 @@ html, body {
   background-color: var(--background);
   color: var(--text-primary);
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 14.7px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+}
+
+body, header, aside, main, div, section, button, span, pre, blockquote {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 body {
@@ -100,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .label-cap {
-  font-size: 11px;
+  font-size: 11.55px;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;

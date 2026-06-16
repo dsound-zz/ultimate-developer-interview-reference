@@ -16,13 +16,13 @@
 
 .value {
   font-family: var(--font-body);
-  font-size: 22px;
+  font-size: 23.1px;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
 
 .sub {
-  font-size: 11px;
+  font-size: 11.55px;
   line-height: 1.4;
   color: var(--text-muted);
 }

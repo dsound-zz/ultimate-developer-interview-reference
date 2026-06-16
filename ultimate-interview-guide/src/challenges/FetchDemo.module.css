@@ -19,19 +19,19 @@
 }
 
 .post strong {
-  font-size: 15px;
+  font-size: 15.75px;
   color: var(--text-primary);
 }
 
 .post p {
-  font-size: 13px;
+  font-size: 13.65px;
   color: var(--text-secondary);
   line-height: 1.6;
 }
 
 .state {
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 14.7px;
   color: var(--text-muted);
   padding: 24px;
   text-align: center;

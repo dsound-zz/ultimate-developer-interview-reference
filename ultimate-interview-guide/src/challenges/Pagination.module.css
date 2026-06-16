@@ -19,7 +19,7 @@
   border: 1px solid var(--border-subtle);
   border-radius: 6px;
   padding: 10px 14px;
-  font-size: 13.5px;
+  font-size: 14.18px;
   color: var(--text-secondary);
 }
 
@@ -36,7 +36,7 @@
   border: 1px solid var(--border);
   color: var(--text-primary);
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 13.65px;
   font-weight: 500;
   padding: 6px 14px;
   border-radius: 6px;
@@ -55,6 +55,6 @@
 }
 
 .controls span {
-  font-size: 13.5px;
+  font-size: 14.18px;
   color: var(--text-secondary);
 }

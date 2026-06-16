@@ -1,0 +1,57 @@
+.watchOut {
+  position: relative;
+  background: linear-gradient(rgba(249, 115, 22, 0.03), rgba(249, 115, 22, 0.03)), var(--surface-raised);
+  border-left: 3px solid #EA580C;
+  padding: 14px 18px;
+  border-radius: 0 8px 8px 0;
+  margin: 18px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  color: #F97316;
+}
+
+.content {
+  color: var(--text-primary);
+  font-size: 13.65px;
+  line-height: 1.6;
+}
+
+.content p {
+  margin: 0;
+}
+
+.content ul {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.content li {
+  position: relative;
+  padding-left: 16px;
+  color: var(--text-secondary);
+}
+
+.content li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 8px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #F97316;
+}

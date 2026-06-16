@@ -10,7 +10,7 @@
   border: 1px solid var(--border);
   color: var(--text-primary);
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 14.7px;
   padding: 10px 14px;
   border-radius: 6px;
   outline: none;
@@ -42,7 +42,7 @@
 .option {
   padding: 10px 14px;
   color: var(--text-secondary);
-  font-size: 13.5px;
+  font-size: 14.18px;
   cursor: pointer;
   transition: all 0.15s ease;
   display: flex;

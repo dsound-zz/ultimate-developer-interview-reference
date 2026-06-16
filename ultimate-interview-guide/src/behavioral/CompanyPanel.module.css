@@ -1,0 +1,132 @@
+.stickyPanel {
+  position: sticky;
+  top: 60px; /* Aligns below the sticky AppNav */
+  z-index: 10;
+  background-color: var(--background);
+  padding: 16px 0;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.header {
+  margin-bottom: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.companyName {
+  font-size: 12.6px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.tenure {
+  font-size: 10.5px;
+  color: var(--text-muted);
+}
+
+.role {
+  font-size: 11.55px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.currency {
+  font-size: 11.55px;
+  line-height: 1.4;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.currencyLabel {
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* Company specific highlight borders on hover */
+.tml:hover {
+  border-color: var(--badge-warn);
+  background: linear-gradient(to bottom, rgba(251, 191, 36, 0.02), transparent), var(--surface);
+}
+
+.rethink:hover {
+  border-color: var(--badge-info);
+  background: linear-gradient(to bottom, rgba(96, 165, 250, 0.02), transparent), var(--surface);
+}
+
+.olivine:hover {
+  border-color: var(--badge-good);
+  background: linear-gradient(to bottom, rgba(52, 211, 153, 0.02), transparent), var(--surface);
+}
+
+.avandar:hover {
+  border-color: #C084FC;
+  background: linear-gradient(to bottom, rgba(192, 132, 252, 0.02), transparent), var(--surface);
+}
+
+/* Color indicators for roles */
+.tml .role { color: var(--badge-warn); }
+.rethink .role { color: var(--badge-info); }
+.olivine .role { color: var(--badge-good); }
+.avandar .role { color: #C084FC; }
+
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .stickyPanel {
+    position: relative;
+    top: 0;
+    margin-bottom: 24px;
+    z-index: 1;
+    border-bottom: none;
+    padding: 0 0 16px 0;
+  }
+  
+  .grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .card {
+    flex-shrink: 0;
+    width: 250px;
+    min-height: 140px;
+  }
+}
