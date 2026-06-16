@@ -1,0 +1,65 @@
+.container {
+  position: relative;
+  max-width: 380px;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(123, 97, 255, 0.15);
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+  max-height: 240px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.option {
+  padding: 10px 14px;
+  color: var(--text-secondary);
+  font-size: 13.5px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.option:hover, .active {
+  background-color: var(--border-subtle);
+  color: var(--text-primary);
+}
+
+.statusMessage {
+  padding: 12px 14px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.errorMessage {
+  padding: 12px 14px;
+  font-size: 13px;
+  color: var(--red);
+}

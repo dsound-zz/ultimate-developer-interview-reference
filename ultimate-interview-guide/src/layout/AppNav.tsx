@@ -20,7 +20,7 @@ interface TabItem {
 const TABS: TabItem[] = [
   { id: 'frontend', label: 'Frontend' },
   { id: 'react-native', label: 'React Native', isComingSoon: true },
-  { id: 'coding-challenges', label: 'Coding Challenges', isComingSoon: true },
+  { id: 'coding-challenges', label: 'Coding Challenges' },
   { id: 'backend', label: 'Backend', isComingSoon: true },
   { id: 'system-design', label: 'System Design', isComingSoon: true },
   { id: 'behavioral', label: 'Behavioral', isComingSoon: true },

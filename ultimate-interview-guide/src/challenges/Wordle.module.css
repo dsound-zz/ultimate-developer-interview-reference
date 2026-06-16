@@ -1,0 +1,121 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.tile {
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  background-color: var(--surface);
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.correct {
+  background-color: var(--green);
+  border-color: var(--green);
+  color: #000000;
+}
+
+.present {
+  background-color: var(--amber);
+  border-color: var(--amber);
+  color: #000000;
+}
+
+.absent {
+  background-color: var(--border-subtle);
+  border-color: var(--border-subtle);
+  color: var(--text-muted);
+}
+
+.input {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.input input {
+  flex: 1;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 6px;
+  outline: none;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.input input:focus {
+  border-color: var(--accent);
+}
+
+.input button {
+  background-color: var(--accent);
+  border: 1px solid var(--accent);
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.input button:hover:not(:disabled) {
+  background-color: var(--accent-hover);
+}
+
+.input button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.win {
+  color: var(--green);
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  margin: 0;
+}
+
+.loss {
+  color: var(--red);
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  margin: 0;
+}

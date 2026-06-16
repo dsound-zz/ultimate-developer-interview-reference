@@ -1,0 +1,62 @@
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  max-width: 340px;
+  width: 100%;
+}
+
+.display {
+  font-family: var(--font-mono);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+  padding: 8px 16px;
+  background-color: #0A0A0C;
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  width: 100%;
+  text-align: center;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.controls button {
+  flex: 1;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.controls button:hover {
+  background-color: var(--border-subtle);
+  border-color: var(--text-muted);
+}
+
+.controls button:first-child {
+  background-color: rgba(123, 97, 255, 0.08);
+  border-color: rgba(123, 97, 255, 0.3);
+}
+
+.controls button:first-child:hover {
+  background-color: rgba(123, 97, 255, 0.15);
+}
