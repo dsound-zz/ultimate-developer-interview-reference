@@ -1,0 +1,127 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: rgba(13, 13, 15, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  height: 60px;
+}
+
+.navContainer {
+  max-width: 1600px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.logo {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  user-select: none;
+}
+
+.logoHighlight {
+  color: var(--accent);
+}
+
+.tabsNav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+}
+
+.tabsNav::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.tabsList {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+}
+
+.tabButton {
+  position: relative;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.tabButton:hover {
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.activeTab {
+  color: var(--text-primary);
+  background-color: rgba(123, 97, 255, 0.08);
+  border-color: rgba(123, 97, 255, 0.3);
+}
+
+.glowIndicator {
+  position: absolute;
+  bottom: -1px;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  background-color: var(--accent);
+  box-shadow: 0 0 10px var(--accent), 0 0 5px var(--accent);
+  border-radius: 1px;
+  animation: glowPulse 2s infinite ease-in-out;
+}
+
+.comingSoonBadge {
+  font-size: 9px;
+  font-weight: 600;
+  background-color: var(--border-subtle);
+  color: var(--text-muted);
+  padding: 1px 4px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.7;
+    box-shadow: 0 0 8px var(--accent);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 14px var(--accent), 0 0 4px var(--accent);
+  }
+}
+
+@media (max-width: 900px) {
+  .logo {
+    display: none;
+  }
+  
+  .navContainer {
+    justify-content: center;
+    padding: 0 12px;
+  }
+}

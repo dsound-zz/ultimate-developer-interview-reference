@@ -1,0 +1,108 @@
+:root {
+  /* Color Palette */
+  --background: #0D0D0F;
+  --surface: #141417;
+  --surface-raised: #1C1C21;
+  --border: #2A2A32;
+  --border-subtle: #1F1F26;
+  --text-primary: #F0EFF5;
+  --text-secondary: #8A8A9A;
+  --text-muted: #52525E;
+  
+  --accent: #7B61FF;
+  --accent-hover: #9B85FF;
+  
+  --green: #34D399;
+  --amber: #FBBF24;
+  --red: #F87171;
+  --blue: #60A5FA;
+
+  /* Badge Colors */
+  --badge-good: #34D399;
+  --badge-good-bg: #0D2E22;
+  --badge-warn: #FBBF24;
+  --badge-warn-bg: #2C2000;
+  --badge-trap: #F87171;
+  --badge-trap-bg: #2C0A0A;
+  --badge-info: #60A5FA;
+  --badge-info-bg: #0A1A2C;
+  --badge-tip: #A78BFA;
+  --badge-tip-bg: #1A0F2E;
+
+  /* Font Families */
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Custom Selection Styles */
+::selection {
+  background-color: var(--accent);
+  color: #FFFFFF;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.label-cap {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}

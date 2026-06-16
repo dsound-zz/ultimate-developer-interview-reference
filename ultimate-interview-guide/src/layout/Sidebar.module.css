@@ -1,0 +1,113 @@
+.sidebarWrapper {
+  position: sticky;
+  top: 90px;
+  width: 250px;
+  max-height: calc(100vh - 120px);
+  flex-shrink: 0;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow-y: auto;
+  max-height: 100%;
+  padding-right: 8px;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 2px;
+}
+
+.navItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-left: 2px solid var(--border-subtle);
+  padding: 10px 16px;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navItem:hover {
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.02);
+  border-left-color: var(--border);
+}
+
+.active {
+  color: var(--accent);
+  border-left-color: var(--accent);
+  background-color: rgba(123, 97, 255, 0.04);
+}
+
+.indicator {
+  display: none;
+}
+
+.label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .sidebarWrapper {
+    position: sticky;
+    top: 60px;
+    width: 100vw;
+    margin-left: -24px; /* Compensate page padding */
+    margin-right: -24px;
+    max-height: none;
+    z-index: 90;
+    background-color: var(--background);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sidebar {
+    flex-direction: row;
+    padding: 12px 24px;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .sidebar::-webkit-scrollbar {
+    display: none; /* Safari & Chrome */
+  }
+
+  .navItem {
+    border-left: none;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 6px 14px;
+    background-color: var(--surface);
+    white-space: nowrap;
+    width: auto;
+  }
+
+  .navItem:hover {
+    background-color: var(--surface-raised);
+    border-color: var(--border);
+  }
+
+  .active {
+    color: var(--text-primary);
+    background-color: var(--accent);
+    border-color: var(--accent);
+  }
+}

@@ -1,0 +1,9 @@
+.inlineCode {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  background-color: #1F1F2E;
+  color: #A78BFA;
+  border-radius: 4px;
+  padding: 1px 6px;
+  white-space: nowrap;
+}

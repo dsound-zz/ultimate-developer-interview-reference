@@ -1,0 +1,21 @@
+# Logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+ultimate-interview-guide/node_modules/
+
+# Production build output
+dist/
+ultimate-interview-guide/dist/
+
+# Env files
+.env*.local
+
+# IDEs and OS files
+.idea/
+.vscode/
+.DS_Store
+*.swp
+*.swo
