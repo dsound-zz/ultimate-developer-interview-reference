@@ -162,6 +162,7 @@ export default function Accordion() {
           <li><strong>When to use memoization:</strong> Not here. The toggle handler is trivial and the list array is static. Memoizing would only add execution overhead.</li>
           <li><strong>Custom hook:</strong> If accordion behavior appeared in multiple places (drawers, FAQ, settings), we'd extract <InlineCode>useDisclosure(count)</InlineCode>. For one view, it is over-engineering.</li>
           <li><strong>Deriving vs Storing:</strong> Never store <InlineCode>isOpen</InlineCode> as state. Compute it inline: <InlineCode>const isOpen = openIndex === index</InlineCode>.</li>
+          <li><strong>Smooth expand/collapse:</strong> The README asks for smooth animation. Conditional render (<InlineCode>{'{'} isOpen && ... {'}'}</InlineCode>) instantly mounts/unmounts the panel. For a CSS transition, use <InlineCode>max-height: 0 → max-height: 200px</InlineCode> and always render the panel with <InlineCode>hidden</InlineCode> attribute — the tradeoff is a bit more CSS complexity vs. a cleaner DOM.</li>
         </ul>
       </SectionCard>
     </>

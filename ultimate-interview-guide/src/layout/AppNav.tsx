@@ -1,14 +1,15 @@
 import React from 'react';
 import styles from './AppNav.module.css';
 
-export type TabId = 
-  | 'frontend' 
-  | 'react-native' 
-  | 'coding-challenges' 
-  | 'backend' 
-  | 'system-design' 
-  | 'behavioral' 
-  | 'ai' 
+export type TabId =
+  | 'frontend'
+  | 'react-native'
+  | 'coding-challenges'
+  | 'code-challenges'
+  | 'backend'
+  | 'system-design'
+  | 'behavioral'
+  | 'ai'
   | 'my-stories';
 
 interface TabItem {
@@ -20,7 +21,8 @@ interface TabItem {
 const TABS: TabItem[] = [
   { id: 'frontend', label: 'Frontend' },
   { id: 'react-native', label: 'React Native', isComingSoon: true },
-  { id: 'coding-challenges', label: 'Coding Challenges' },
+  { id: 'coding-challenges', label: 'React Challenges' },
+  { id: 'code-challenges', label: 'Code Challenges' },
   { id: 'backend', label: 'Backend', isComingSoon: true },
   { id: 'system-design', label: 'System Design' },
   { id: 'behavioral', label: 'Behavioral' },

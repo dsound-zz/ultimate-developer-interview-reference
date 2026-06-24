@@ -13,40 +13,41 @@ export const GrowthLearning: React.FC = () => {
       <BehavioralCard
         question='Tell me about a time you received difficult feedback.'
         reallyAsking="Are you coachable? Do you get defensive?"
-        company="avandar"
-        signals={['Coachability', 'Growth mindset', 'Self-awareness']}
+        company="olivine"
+        signals={['Coachability', 'Growth mindset', 'Self-awareness', 'Communication']}
         modeType="star"
         starContent={{
           situation: (
             <p>
-              Working closely with the CTO at Avandar, I received detailed, high-standards code review feedback consistently. Some of it was affirming, some of it required real changes in how I thought about code structure.
+              At Olivine, feedback came through that my documentation had fallen significantly behind. As the product was expanding to serve new user segments, keeping internal docs current had slipped — and it was creating friction for teammates trying to understand existing systems.
             </p>
           ),
           task: (
             <p>
-              Receive it well — not just implement the changes, but understand the reasoning behind them.
+              Take the feedback seriously, catch up on what was missing, and build a habit that actually stuck — not just a one-time patch.
             </p>
           ),
           action: (
             <p>
-              I treated each detailed review as a learning artifact. When I didn't understand the rationale for a change, I asked. When the feedback pointed to a pattern in how I was writing code, I looked for that pattern elsewhere and fixed it proactively — not just in the file being reviewed. I also noticed how he framed feedback: specific, affirming alongside critical, never personal. I started writing my own reviews the same way.
+              I audited what was outdated or missing and worked through it systematically. More importantly, I changed how I wrote documentation going forward — shorter, more direct, focused on what a reader actually needs to know rather than exhaustive coverage. The feedback was specifically that docs needed to be more concise, and that landed: I had been writing for completeness when I should have been writing for clarity.
             </p>
           ),
           result: (
             <p>
-              My code got better. My reviews got better. I came away with a model for how high-standards feedback can be a gift rather than a judgment.
+              Documentation stayed current from that point on. Teammates could find what they needed without coming to me to fill in gaps. The habit of writing leaner, more targeted docs stuck — and made the writing faster too.
             </p>
           ),
         }}
         honestContent={{
           candid: (
             <p>
-              The behavioral change is the proof. Not "I received feedback well" (anyone can say that) but "here's what I changed as a result." The code review culture adoption is that proof.
+              The behavioral change is the proof here. Not "I received it well" — but "here's what I actually changed." The shift from writing for completeness to writing for clarity is a real, demonstrable improvement you can speak to.
             </p>
           ),
           watchOut: (
             <ul>
-              <li>Don't make this a story about how brilliant the CTO was. Make it a story about how you responded to high-quality feedback.</li>
+              <li>Don't be defensive about letting docs slip — it happens, and the response matters more than the mistake.</li>
+              <li>Don't frame it as a one-time fix. The story is about changing a habit, not clearing a backlog.</li>
             </ul>
           ),
         }}

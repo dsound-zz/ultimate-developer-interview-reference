@@ -119,34 +119,45 @@ export default function Modal() {
 }`,
   coachView: (
     <>
+      <SectionCard title="Requirements (from the drill spec)">
+        <ol>
+          <li><strong>Button to open modal.</strong></li>
+          <li><strong>Modal with a semi-transparent overlay.</strong></li>
+          <li><strong>Click the overlay → close the modal.</strong></li>
+          <li><strong>Click inside the modal content → do NOT close it.</strong> This requires <InlineCode>e.stopPropagation()</InlineCode>. This is the primary evaluation point.</li>
+          <li><strong>Close button inside the modal.</strong></li>
+        </ol>
+      </SectionCard>
+
       <SectionCard title="How to think about it">
         <ul>
-          <li>"State shape is trivially <InlineCode>isOpen: boolean</InlineCode>. The interesting parts are the behaviors: Escape key, overlay click, and focus traps."</li>
-          <li>We need to wire up three close triggers: Escape key, backdrop overlay click, and active Close/Cancel buttons. All of them invoke <InlineCode>setIsOpen(false)</InlineCode>.</li>
-          <li>"I always mention React Portals unprompted — modals should render outside the app root so they're never clipped by parent layouts utilizing <InlineCode>overflow: hidden</InlineCode>."</li>
+          <li>"State is trivially <InlineCode>isOpen: boolean</InlineCode>. The entire challenge is about the close mechanics — three triggers all call <InlineCode>setIsOpen(false)</InlineCode>: Escape key, overlay click, and the Close button."</li>
+          <li><strong>The key insight:</strong> The overlay's <InlineCode>onClick</InlineCode> closes the modal. The modal's own <InlineCode>onClick</InlineCode> calls <InlineCode>e.stopPropagation()</InlineCode> to prevent bubble-up. Without this, clicking anywhere inside the modal also fires the overlay's handler and closes it immediately.</li>
+          <li>"I always mention React Portals unprompted — modals should render outside the app root so they're never clipped by parent <InlineCode>overflow: hidden</InlineCode> layouts."</li>
         </ul>
       </SectionCard>
 
       <SeniorSignal>
         <ul>
-          <li>Uses <InlineCode>ReactDOM.createPortal(modal, document.body)</InlineCode> to render overlay layers directly onto the body root.</li>
-          <li>Locks background scrolling by setting <InlineCode>document.body.style.overflow = 'hidden'</InlineCode> when open, restoring it upon cleanup.</li>
-          <li>Cleans up keydown listeners: "The guard condition in the effect is important — we don't want active listeners running when the modal is closed."</li>
-          <li>Uses <InlineCode>e.stopPropagation()</InlineCode> on the dialog content box to prevent backdrop click dismissals from bubble propagation.</li>
+          <li>Names <InlineCode>e.stopPropagation()</InlineCode> on the modal <InlineCode>div</InlineCode> as the critical missing piece. "Without this, clicking inside the modal content fires the overlay handler — it closes immediately."</li>
+          <li>Uses <InlineCode>ReactDOM.createPortal(modal, document.body)</InlineCode> to render the overlay directly on <InlineCode>body</InlineCode>, avoiding any parent <InlineCode>overflow: hidden</InlineCode> clipping.</li>
+          <li>Guards the Escape key <InlineCode>useEffect</InlineCode> with <InlineCode>if (!isOpen) return</InlineCode>. "We don't want a global keydown listener running when nothing is open."</li>
+          <li>Locks body scroll: <InlineCode>document.body.style.overflow = 'hidden'</InlineCode> when open, restored in the cleanup function.</li>
+          <li>Adds ARIA: <InlineCode>role="dialog"</InlineCode>, <InlineCode>aria-modal="true"</InlineCode>, <InlineCode>aria-labelledby</InlineCode> pointing to the modal title.</li>
         </ul>
       </SeniorSignal>
 
       <Trap>
         <ul>
-          <li>Forgetting to clean up keydown event listeners, leading to memory leaks and stale event loops.</li>
-          <li>Omitting <InlineCode>stopPropagation</InlineCode>, causing clicks inside the dialog content to immediately close it.</li>
-          <li>Rendering the modal directly inside the parent layout rather than utilizing a portal overlay.</li>
+          <li>Forgetting <InlineCode>stopPropagation</InlineCode> — every click inside the modal immediately closes it because the event bubbles to the overlay.</li>
+          <li>Forgetting to clean up the keydown event listener — leads to memory leaks and stale handlers.</li>
+          <li>Rendering the modal inline in the component tree instead of via a portal — clips behind <InlineCode>overflow: hidden</InlineCode> ancestors.</li>
         </ul>
       </Trap>
 
       <SectionCard title="CSS Detail">
         <ul>
-          <li><strong>Fixed positioning overlay:</strong> Use modern shorthand <InlineCode>position: fixed; inset: 0</InlineCode> to cover the entire viewport cleanly instead of declaring top, right, bottom, and left separately.</li>
+          <li><strong>Fixed overlay:</strong> Use <InlineCode>position: fixed; inset: 0</InlineCode> to cover the full viewport — cleaner than declaring <InlineCode>top/right/bottom/left</InlineCode> separately.</li>
         </ul>
       </SectionCard>
     </>

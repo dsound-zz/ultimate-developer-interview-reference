@@ -144,7 +144,7 @@ export default function TicTacToe() {
           <li>Derives the game winner on every single render pass. "Never write winner flags into state. Storing derived state calculations is one of the most common junior patterns."</li>
           <li>Hoists the checker <InlineCode>getWinner()</InlineCode> outside the component scope to preserve function purity and ease of testing.</li>
           <li>Performs board updates immutably using <InlineCode>board.map()</InlineCode> or shallow clones.</li>
-          <li>Proactively mentions extension ideas: "We could easily make the winning selector return the coordinate lines so we can highlight matching cells."</li>
+          <li>Proactively mentions extension ideas: "The README calls out winning line highlighting as an optional goal. To implement it, return the winning triple <InlineCode>[a, b, c]</InlineCode> from <InlineCode>getWinner</InlineCode> instead of just the player marker, then apply a highlight class to those indices during render."</li>
         </ul>
       </SeniorSignal>
     </>

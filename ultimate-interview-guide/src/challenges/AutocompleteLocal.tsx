@@ -171,32 +171,44 @@ export default function Autocomplete() {
 }`,
   coachView: (
     <>
+      <SectionCard title="Requirements (from the drill spec)">
+        <ol>
+          <li><strong>Controlled input</strong> that filters items as user types.</li>
+          <li><strong>Dropdown</strong> showing filtered matches.</li>
+          <li><strong>Highlight matching text</strong> in dropdown items.</li>
+          <li><strong>Click dropdown item</strong> to fill the input.</li>
+          <li><strong><InlineCode>highlightMatch</InlineCode> extracted outside the component</strong> — the README explicitly requires this.</li>
+        </ol>
+      </SectionCard>
+
       <SectionCard title="How to think about it">
         <ul>
           <li>"Two pieces of state: the query string and the selected index for keyboard navigation. The filtered list is derived math — never stored as a separate state."</li>
-          <li>"The derivation is just one simple filter query: <InlineCode>items.filter(i =&gt; i.includes(query))</InlineCode>. No effects are needed here."</li>
+          <li>"The derivation is just one simple filter: <InlineCode>items.filter(i =&gt; i.includes(query))</InlineCode>. No effects are needed here."</li>
           <li>Walk through the interactions: typing (triggering derivation), clicking (selecting and closing), and keyboard arrows (incrementing active select index).</li>
         </ul>
       </SectionCard>
 
       <SeniorSignal>
         <ul>
-          <li>Uses <InlineCode>onMouseDown</InlineCode> instead of <InlineCode>onClick</InlineCode> on dropdown options. "Clicks fire after blurs. If we use <InlineCode>onClick</InlineCode>, the input element blurs first and shuts the menu before selection. <InlineCode>onMouseDown</InlineCode> fires first."</li>
+          <li><strong>Extracts <InlineCode>highlightMatch</InlineCode> outside the component.</strong> "This function is pure — two strings in, JSX out. It has no reason to live inside the component or access any hook. The interviewer will look for this."</li>
+          <li>Uses <InlineCode>onMouseDown</InlineCode> instead of <InlineCode>onClick</InlineCode> on dropdown options. "Clicks fire after blurs. If we use <InlineCode>onClick</InlineCode>, the input blurs first and closes the menu before the selection fires. <InlineCode>onMouseDown</InlineCode> fires first."</li>
           <li>Resets the active <InlineCode>selectedIndex</InlineCode> to <InlineCode>-1</InlineCode> whenever the search query changes.</li>
-          <li>Supports closing suggestions on Escape key and committing selections on Enter.</li>
+          <li>Supports closing on Escape and committing on Enter.</li>
         </ul>
       </SeniorSignal>
 
       <Trap>
         <ul>
-          <li>Storing the filtered list array inside local state and syncing it via a resource-heavy <InlineCode>useEffect</InlineCode> watcher.</li>
-          <li>Using standard click listeners (<InlineCode>onClick</InlineCode>) on items, causing selection bugs during focus blur events.</li>
+          <li>Storing the filtered list in state and syncing it via <InlineCode>useEffect</InlineCode> — derive it inline instead.</li>
+          <li>Using <InlineCode>onClick</InlineCode> on dropdown items — the blur fires first and closes the dropdown before the selection registers.</li>
+          <li>Keeping <InlineCode>highlightMatch</InlineCode> inside the component — it doesn't use any hooks or closure values and has no business being there.</li>
         </ul>
       </Trap>
 
       <SectionCard title="Architecture Decisions">
         <ul>
-          <li><strong>Pure utility functions:</strong> Hoist match highlighter <InlineCode>highlightMatch()</InlineCode> outside the component since it does not consume local hooks, closures, or component scope, keeping rendering pure and testable.</li>
+          <li><strong>Pure utility functions:</strong> Hoist <InlineCode>highlightMatch()</InlineCode> outside the component since it does not consume local hooks or component scope. This makes it independently testable and reusable.</li>
         </ul>
       </SectionCard>
     </>
