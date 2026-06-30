@@ -8,6 +8,8 @@ import { PlaceholderTab } from './tabs/PlaceholderTab';
 import { BehavioralTab } from './tabs/BehavioralTab';
 import { AIAgentsTab } from './tabs/AIAgentsTab';
 import { CodeChallengesTab } from './tabs/CodeChallengesTab';
+import { BackendTab } from './tabs/BackendTab';
+import { InfraTab } from './tabs/InfraTab';
 
 const TAB_LABELS: Record<TabId, string> = {
   'frontend': 'Frontend',
@@ -15,6 +17,7 @@ const TAB_LABELS: Record<TabId, string> = {
   'coding-challenges': 'React Challenges',
   'code-challenges': 'Code Challenges',
   'backend': 'Backend',
+  'infra': 'Infra',
   'system-design': 'System Design',
   'behavioral': 'Behavioral',
   'ai': 'AI & Agents',
@@ -45,6 +48,12 @@ function App() {
     }
     if (activeTab === 'code-challenges') {
       return <CodeChallengesTab />;
+    }
+    if (activeTab === 'backend') {
+      return <BackendTab />;
+    }
+    if (activeTab === 'infra') {
+      return <InfraTab />;
     }
     if (activeTab === 'system-design') {
       return <SystemDesignTab />;

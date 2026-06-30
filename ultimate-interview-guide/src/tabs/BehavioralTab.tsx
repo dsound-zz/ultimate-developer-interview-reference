@@ -16,6 +16,7 @@ import { AmbiguityPressure } from '../sections/AmbiguityPressure';
 import { CompanySpecificQuestions } from '../sections/CompanySpecificQuestions';
 
 const SIDEBAR_ITEMS: SidebarItem[] = [
+  { id: 'company-reference', label: 'Company Reference' },
   { id: 'conflict-disagreement', label: 'Conflict & Disagreement' },
   { id: 'ownership-failure', label: 'Ownership & Failure' },
   { id: 'initiative-impact', label: 'Initiative & Impact' },
@@ -28,7 +29,7 @@ const SIDEBAR_ITEMS: SidebarItem[] = [
 ];
 
 export const BehavioralTab: React.FC = () => {
-  const [activeSection, setActiveSection] = useState('conflict-disagreement');
+  const [activeSection, setActiveSection] = useState('company-reference');
 
   useEffect(() => {
     const sectionIds = SIDEBAR_ITEMS.map((item) => item.id);

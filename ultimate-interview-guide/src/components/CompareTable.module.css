@@ -2,14 +2,15 @@
   border: 1px solid var(--border);
   background-color: var(--surface-raised);
   border-radius: 8px;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   margin: 16px 0;
   width: 100%;
 }
 
 .gridContainer {
   display: grid;
-  width: 100%;
+  min-width: min-content;
 }
 
 .headerCell {
@@ -56,11 +57,7 @@
 }
 
 @media (max-width: 768px) {
-  .tableCard {
-    overflow-x: auto;
-  }
-  
   .gridContainer {
-    min-width: 650px; /* Force scroll on mobile only */
+    min-width: 650px;
   }
 }

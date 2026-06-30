@@ -113,6 +113,64 @@ export const TechnicalJudgment: React.FC = () => {
           },
         ]}
       />
+
+      <BehavioralCard
+        question='How would you decide between polling, Server-Sent Events, and WebSockets for a real-time feature?'
+        reallyAsking="Can you reason about protocol-level tradeoffs in context, or do you just recite definitions?"
+        company="nec"
+        signals={['Technical judgment', 'Tradeoff articulation', 'Protocol design', 'Anchoring to their system']}
+        modeType="frame"
+        frameContent={
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <p>
+              <strong>The three options:</strong> Polling — client asks repeatedly on an interval. SSE (Server-Sent Events) — one-way push, server → client, over plain HTTP. WebSockets — full duplex, both directions, persistent connection.
+            </p>
+            <p>
+              <strong>The four-step answer, live-rehearsal style:</strong>
+            </p>
+            <div style={{ borderLeft: '2px solid var(--accent)', paddingLeft: '12px', color: 'var(--text-secondary)' }}>
+              <strong style={{ color: 'var(--text-primary)' }}>Choice:</strong> "For the NEC Labs design-token system, we used SSE."
+            </div>
+            <div style={{ borderLeft: '2px solid var(--accent)', paddingLeft: '12px', color: 'var(--text-secondary)' }}>
+              <strong style={{ color: 'var(--text-primary)' }}>Why:</strong> "The data only needed to flow one direction, server to client. The LLM decided things server-side and pushed updates down. The client never needed to send a stream of its own data back up, just the occasional normal HTTP request to trigger things. SSE gives you that one-way push without the overhead of a full duplex protocol."
+            </div>
+            <div style={{ borderLeft: '2px solid var(--accent)', paddingLeft: '12px', color: 'var(--text-secondary)' }}>
+              <strong style={{ color: 'var(--text-primary)' }}>Cost:</strong> "The tradeoff is SSE can't push data the other way — if you needed bidirectional, like a chat input streaming up while tokens stream down, you'd need WebSockets instead. SSE also has some old proxy/infra quirks, like needing to disable buffering on certain reverse proxies, and browser connection limits per domain if you're not careful. Polling would've been the simplest option but it's wasteful — you're either polling too often and wasting requests, or too rarely and feeling laggy. With a push-based model the server tells you exactly when something changed."
+            </div>
+            <div style={{ borderLeft: '2px solid var(--accent)', paddingLeft: '12px', color: 'var(--text-secondary)' }}>
+              <strong style={{ color: 'var(--text-primary)' }}>Anchor:</strong> "Given the Understood Assistant is also a chat-style interface, that's actually the one place I'd flag this matters — if you ever want the client to stream tokens up too, like a long voice transcription mid-flight, SSE alone won't carry that. You'd want WebSockets or a hybrid."
+            </div>
+          </div>
+        }
+        listeningFor="Whether you connect the tradeoff to their specific product, not just whether you know what SSE stands for."
+        honestContent={{
+          candid: (
+            <p>
+              The Anchor step is the move that actually answers "tradeoffs," not just "what is SSE." Choice and Why are table stakes — most candidates who've used SSE can give you those. Cost shows you know the failure modes. Anchor is what's rare: showing you're already thinking about <em>their</em> system, unprompted. This four-step shape — Choice, Why, Cost, Anchor — generalizes to almost any "why did you pick X" question, not just protocol choices.
+            </p>
+          ),
+          watchOut: (
+            <ul>
+              <li>Don't stop at Why. An answer that's all definition and no cost reads as memorized, not reasoned.</li>
+              <li>Don't force an Anchor if you don't actually have one — a fabricated connection to their system is worse than no connection at all. Only use it when the parallel is real.</li>
+            </ul>
+          ),
+        }}
+        followUps={[
+          {
+            question: "What if the SSE connection drops?",
+            note: "Browsers auto-reconnect by default with EventSource, and you can send a Last-Event-ID header so the server resumes from where it left off, rather than replaying everything.",
+          },
+          {
+            question: "Why not WebSockets for everything, just to be safe?",
+            note: "Complexity cost. WebSockets need their own connection management, heartbeats, reconnect logic, and most load balancers need extra config for sticky sessions. If you don't need bidirectional, that's complexity you're carrying for nothing.",
+          },
+          {
+            question: "How would you scale SSE across multiple server instances?",
+            note: "Honest answer: that's the part I'd want to pair on. Conceptually you need something like Redis pub/sub or a message broker so any instance holding a client connection can receive the event, not just the instance that originated it.",
+          },
+        ]}
+      />
     </SectionContainer>
   );
 };

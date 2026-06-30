@@ -7,6 +7,7 @@ export type TabId =
   | 'coding-challenges'
   | 'code-challenges'
   | 'backend'
+  | 'infra'
   | 'system-design'
   | 'behavioral'
   | 'ai'
@@ -23,7 +24,8 @@ const TABS: TabItem[] = [
   { id: 'react-native', label: 'React Native', isComingSoon: true },
   { id: 'coding-challenges', label: 'React Challenges' },
   { id: 'code-challenges', label: 'Code Challenges' },
-  { id: 'backend', label: 'Backend', isComingSoon: true },
+  { id: 'backend', label: 'Backend' },
+  { id: 'infra', label: 'Infra' },
   { id: 'system-design', label: 'System Design' },
   { id: 'behavioral', label: 'Behavioral' },
   { id: 'ai', label: 'AI & Agents' },

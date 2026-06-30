@@ -1,8 +1,4 @@
-.stickyPanel {
-  position: sticky;
-  top: 60px; /* Aligns below the sticky AppNav */
-  z-index: 10;
-  background-color: var(--background);
+.panel {
   padding: 16px 0;
   margin-bottom: 32px;
   border-bottom: 1px solid var(--border-subtle);
@@ -99,11 +95,8 @@
 }
 
 @media (max-width: 768px) {
-  .stickyPanel {
-    position: relative;
-    top: 0;
+  .panel {
     margin-bottom: 24px;
-    z-index: 1;
     border-bottom: none;
     padding: 0 0 16px 0;
   }

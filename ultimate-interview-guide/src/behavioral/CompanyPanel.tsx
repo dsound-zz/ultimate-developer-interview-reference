@@ -43,7 +43,7 @@ const COMPANIES: CompanyInfo[] = [
 
 export const CompanyPanel: React.FC = () => {
   return (
-    <div className={styles.stickyPanel}>
+    <div id="company-reference" className={styles.panel}>
       <div className={styles.header}>
         <span className="label-cap">Company Reference & Story Currency</span>
       </div>
