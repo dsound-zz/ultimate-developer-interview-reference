@@ -10,6 +10,7 @@ import { AIAgentsTab } from './tabs/AIAgentsTab';
 import { CodeChallengesTab } from './tabs/CodeChallengesTab';
 import { BackendTab } from './tabs/BackendTab';
 import { InfraTab } from './tabs/InfraTab';
+import { TradeoffsTab } from './tabs/TradeoffsTab';
 
 const TAB_LABELS: Record<TabId, string> = {
   'frontend': 'Frontend',
@@ -21,6 +22,7 @@ const TAB_LABELS: Record<TabId, string> = {
   'system-design': 'System Design',
   'behavioral': 'Behavioral',
   'ai': 'AI & Agents',
+  'tradeoffs': 'Tradeoffs',
   'my-stories': 'My Stories',
 };
 
@@ -63,6 +65,9 @@ function App() {
     }
     if (activeTab === 'ai') {
       return <AIAgentsTab />;
+    }
+    if (activeTab === 'tradeoffs') {
+      return <TradeoffsTab />;
     }
     return <PlaceholderTab title={TAB_LABELS[activeTab]} />;
   };

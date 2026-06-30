@@ -11,6 +11,7 @@ export type TabId =
   | 'system-design'
   | 'behavioral'
   | 'ai'
+  | 'tradeoffs'
   | 'my-stories';
 
 interface TabItem {
@@ -29,6 +30,7 @@ const TABS: TabItem[] = [
   { id: 'system-design', label: 'System Design' },
   { id: 'behavioral', label: 'Behavioral' },
   { id: 'ai', label: 'AI & Agents' },
+  { id: 'tradeoffs', label: 'Tradeoffs' },
   { id: 'my-stories', label: 'My Stories', isComingSoon: true },
 ];
 

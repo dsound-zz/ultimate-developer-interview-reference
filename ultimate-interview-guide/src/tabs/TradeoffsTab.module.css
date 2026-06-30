@@ -1,0 +1,172 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+/* ── Filter bar ─────────────────────────────────────────────────────────── */
+
+.filterBar {
+  position: sticky;
+  top: 56px; /* sit below the app nav */
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border-subtle);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.pill {
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  letter-spacing: 0.01em;
+}
+
+.pill:hover {
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+
+.pillActive {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.pillActive:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* ── Entry list ─────────────────────────────────────────────────────────── */
+
+.entryList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 2rem;
+}
+
+/* ── Entry card header ──────────────────────────────────────────────────── */
+
+.entryHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.pairTitle {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.domainBadge {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  background: var(--surface-raised);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+/* ── Axis block ─────────────────────────────────────────────────────────── */
+
+.axisBlock {
+  border-left: 3px solid var(--accent);
+  padding: 0.6rem 0 0.6rem 1rem;
+  margin-bottom: 1.25rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ── When-to-choose grid ────────────────────────────────────────────────── */
+
+.whenGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+@media (max-width: 600px) {
+  .whenGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.whenCell {
+  padding: 0.85rem 1rem;
+  background: var(--surface-raised);
+  border-radius: 6px;
+  border: 1px solid var(--border-subtle);
+}
+
+.whenLabel {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+
+.whenLabelA {
+  color: var(--green);
+}
+
+.whenLabelB {
+  color: var(--blue);
+}
+
+.whenText {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── Cross-reference note ───────────────────────────────────────────────── */
+
+.crossRef {
+  margin-top: 0.75rem;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  opacity: 0.75;
+}
+
+.crossRef a,
+.crossRef span {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ── Empty state ────────────────────────────────────────────────────────── */
+
+.emptyState {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
